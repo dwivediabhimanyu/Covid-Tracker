@@ -1,0 +1,19 @@
+image: node:8.12.0
+
+pages:
+  cache:
+    paths:
+    - node_modules/
+
+  stage: deploy
+  script:
+  - npm install -g @angular/cli@6.2.1
+  - npm install
+  - ng build --base-href=.
+  - mv dist/conFusion/* public/
+  artifacts:
+    paths:
+    - public
+  only:
+  - master
+  - pages

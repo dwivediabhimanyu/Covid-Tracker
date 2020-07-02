@@ -1,0 +1,26 @@
+
+<mat-toolbar>
+  <a mat-button routerLink="/home" routerLinkActive="active">Home</a>
+  <a mat-button routerLink="/aboutus" routerLinkActive="active">About</a>
+  <a mat-button routerLink="/contactus" routerLinkActive="active">Contact</a>
+  <span class="flex-spacer"></span>
+  <a mat-button (click)="openLoginForm()"> Login</a>
+</mat-toolbar>
+
+<div class="container jumbotron"
+    fxLayout="row"
+    fxLayout.sm="column" 
+    fxLayout.xs="column" 
+    fxLayoutAlign.xs="start center"
+    fxLayoutAlign.sm="start center" 
+    fxLayoutAlign.gt-sm="center center" 
+    fxLayoutGap="10px">
+
+  <div fxFlex fxFlex.gt-sm="100%" style="text-align: center;">
+    <h1><span class="fa fa-h-square"></span> Covid Bed Tracker </h1>
+  </div>
+
+  <div fxFlex></div>
+</div>
+
+

@@ -1,0 +1,53 @@
+<div class="container"
+  fxLayout="column"
+  fxLayoutGap="10px">
+
+  <div fxFlex>
+    <div>
+        <h3>About Covid Tracker</h3>
+        <hr>
+    </div>
+  </div>
+
+  <div fxFlex>
+    <div fxLayout="column" fxLayout.gt-sm="row">
+      <div fxFlex="70">
+        <h2>Inspiration</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Eu nisl nunc mi ipsum faucibus vitae aliquet nec. At erat pellentesque adipiscing commodo elit at imperdiet dui accumsan. Viverra vitae congue eu consequat ac felis donec et. Habitant morbi tristique senectus et netus et. Leo a diam sollicitudin tempor id eu. Tincidunt arcu non sodales neque sodales. Senectus et netus et malesuada fames ac. Amet consectetur adipiscing elit pellentesque habitant morbi tristique. Pharetra et ultrices neque ornare aenean euismod elementum nisi. At risus viverra adipiscing at in tellus integer.</p>
+      </div>
+    </div>
+  </div>
+  
+  <div fxFlex>
+    <mat-card>
+      <blockquote>
+        <h3>Testimonials </h3>
+        <footer>-- Narendra Modi,
+          <cite>Sit amet purus gravida quis blandit turpis cursus in. Eleifend quam adipiscing vitae proin. </cite>
+        </footer>
+      </blockquote>
+    </mat-card>
+  </div>
+
+<div fxFlex *ngIf="leaders">
+  <h2>Developer</h2>
+  <div class="container" fxLayout="column" fxLayoutGap="10px">
+    <mat-list fxFlex>
+      <mat-list-item *ngFor="let leader of leaders">
+        <img matListAvatar src={{leader.image}} alt={{leader.name}}>
+        <h1 matLine> {{leader.name}} {{leader.abbr}} </h1>
+        <p matLine>
+          <span> {{leader.designation}} </span>
+        </p>       
+        <p matLine>
+          <span> {{leader.description}} </span>
+        </p>
+      </mat-list-item>
+    </mat-list>
+  </div>
+</div>
+<div [hidden]="leaders">
+  <mat-spinner></mat-spinner><h4>Loading . . . Please Wait</h4>
+</div>
+</div>

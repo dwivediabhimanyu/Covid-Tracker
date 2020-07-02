@@ -1,0 +1,34 @@
+<div class="container"
+     fxLayout="column"
+     fxLayoutGap="10px">
+
+  <div fxFlex>
+    <div>
+      <h3>Hospitals</h3>
+      <hr>
+    </div>
+  </div>
+
+  <div fxFlex *ngIf="items">
+    <mat-grid-list cols="3" rowHeight="300px" [gutterSize]="'10px'">
+      <mat-grid-tile *ngFor="let item of items" >       
+        <mat-card class="hospitalCard" [routerLink]="['/tracking', item.id]">
+          <mat-card-header>
+            <mat-card-title>{{item.name | uppercase}}</mat-card-title>
+            <mat-card-subtitle>{{item.category | uppercase}}</mat-card-subtitle>
+          </mat-card-header>
+          <img mat-card-image height="200px"  src={{item.image}} alt={{item.name}}>
+          <mat-card-content>
+            <p>
+              Vaccant Beds: {{item.vaccant}}
+            </p>
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+
+  <div [hidden]="items">
+    <mat-spinner></mat-spinner><h4>Loading . . . Please Wait</h4>
+  </div>
+</div>

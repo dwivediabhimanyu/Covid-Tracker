@@ -1,0 +1,24 @@
+<div>
+    <agm-map [latitude]="coordinates.latitude" [longitude]="coordinates.longitude" [zoom]="14">
+      <agm-marker [latitude]="coordinates.latitude" [longitude]="coordinates.longitude" 
+      [iconUrl]="'https://tj-static.s3.ap-south-1.amazonaws.com/1.png'"
+      >
+        <agm-info-window>
+          <h3>
+            <p>Your current location is here</p>
+          </h3>
+        </agm-info-window>
+      </agm-marker>
+    <!-- Nearby Hospitals-->
+    <agm-marker *ngFor="let marker of markers" [latitude]="marker.location[0]" [longitude]="marker.location[1]"
+    [iconUrl]="'https://tj-static.s3.ap-south-1.amazonaws.com/2.png'"
+    >
+      <agm-info-window>
+        <h3>
+          <strong>Hospital Details</strong>
+          <p>Hospital is {{marker.distance}} from your current location.</p>
+        </h3>
+      </agm-info-window>
+    </agm-marker>
+    </agm-map>
+</div>
