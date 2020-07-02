@@ -38,7 +38,8 @@ import { AgmCoreModule } from '@agm/core';
 import { MapViewComponent } from './map-view/map-view.component'
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
-import { AngularFirestoreModule } from 'angularfire2/firestore'
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { DashboardComponent } from './dashboard/dashboard.component'
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { AngularFirestoreModule } from 'angularfire2/firestore'
     HomeComponent,
     ContactComponent,
     LoginComponent,
-    MapViewComponent
+    MapViewComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

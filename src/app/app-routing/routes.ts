@@ -6,12 +6,13 @@ import { HomeComponent } from '../home/home.component';
 import { AboutComponent } from '../about/about.component';
 import { ContactComponent } from '../contact/contact.component';
 import { MapViewComponent } from '../map-view/map-view.component'
-
+import { DashboardComponent } from '../dashboard/dashboard.component'
 export const routes: Routes = [
   { path: 'home',  component: HomeComponent },
   { path: 'aboutus',  component: AboutComponent },
   { path: 'tracking',     component: MenuComponent },
   { path: 'contactus',     component: ContactComponent },
+  { path: 'dashboard', component: DashboardComponent},
   { path: 'tracking/:id',     component: DishdetailComponent },
   { path: 'live', component: MapViewComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' }
