@@ -17,6 +17,8 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms'; 
+import { MatExpansionModule } from '@angular/material/expansion';
+import {MatSnackBar, MatSnackBarModule} from '@angular/material';
 
 import 'hammerjs';
 
@@ -33,13 +35,15 @@ import { PromotionService } from './services/promotion.service'
 import { LeadersService } from './services/leaders.service';
 import { HospitaldbService } from './services/hospitaldb.service'
 import { LoginComponent } from './login/login.component'
-import { environment } from 'src/environments/environment';
+import { environment } from 'src/environments/environment.prod';
 import { AgmCoreModule } from '@agm/core';
 import { MapViewComponent } from './map-view/map-view.component'
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
-import { DashboardComponent } from './dashboard/dashboard.component'
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+
 
 @NgModule({
   declarations: [
@@ -53,13 +57,15 @@ import { DashboardComponent } from './dashboard/dashboard.component'
     ContactComponent,
     LoginComponent,
     MapViewComponent,
-    DashboardComponent
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AgmCoreModule.forRoot({
-      apiKey: environment.googleMapsKey
+      apiKey: environment.googleMapsKey,
+      language: 'en',
+      libraries: ['geometry', 'places']
     }),
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
@@ -67,10 +73,12 @@ import { DashboardComponent } from './dashboard/dashboard.component'
     MatToolbarModule,
     MatListModule,
     MatDialogModule,
+    MatExpansionModule,
     MatFormFieldModule, 
     MatInputModule,
     MatCheckboxModule,
     MatSelectModule,
+    MatSnackBarModule,
     MatSlideToggleModule,
     MatProgressSpinnerModule,
     AppRoutingModule,
@@ -79,7 +87,8 @@ import { DashboardComponent } from './dashboard/dashboard.component'
     MatCardModule,
     MatButtonModule,
     FormsModule,
-    ReactiveFormsModule 
+    ReactiveFormsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }) 
   ],
   entryComponents: [
     LoginComponent],

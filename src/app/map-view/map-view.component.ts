@@ -32,7 +32,7 @@ export class MapViewComponent implements OnInit {
         latitude : +(pos.coords.latitude),
         longitude: +(pos.coords.longitude)
       }
-      console.log(this.coordinates)
+      console.log("Coords",this.coordinates)
       this.geo.getLocation(50,[this.coordinates.latitude,this.coordinates.longitude])
     
     })

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Dish } from '../shared/dish';
-import { DishService } from '../services/dish.service';
 import { HospitaldbService } from '../services/hospitaldb.service'
 import { Hospital } from '../shared/hospitalRecordModel'
 @Component({
@@ -14,14 +13,12 @@ export class MenuComponent implements OnInit {
   dishes: Dish[];
 
   selectedDish: Dish;
-
+  selected: string;
   items: Hospital[];
   constructor(
-    private dishService: DishService,
     public hospitalService: HospitaldbService) { }
 
   ngOnInit() {
-    this.dishService.getDishes().subscribe(dishes => this.dishes = dishes);
     this.hospitalService.getHospitals().subscribe(
       items => {
         console.log("Firebase Data")
@@ -29,6 +26,7 @@ export class MenuComponent implements OnInit {
         console.log(this.items)
       }
     )
+    this.selected = 'option0'
   }
   
   onSelect(dish: Dish) {

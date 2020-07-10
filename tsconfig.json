@@ -3,6 +3,9 @@
   "compilerOptions": {
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
+    "types": [
+      "googlemaps"
+    ],
     "sourceMap": true,
     "skipLibCheck": true,
     "declaration": false,

@@ -9,7 +9,8 @@ export interface Hospital {
     label: string;
     price: string;
     description: string;
-    vaccant: number;
+    totalBeds: number,
+    occupiedBeds: number,
     lat: number;
     lng: number;
  

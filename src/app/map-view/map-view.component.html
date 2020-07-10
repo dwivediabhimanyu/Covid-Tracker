@@ -1,4 +1,7 @@
-<div>
+<mat-toolbar>
+  <h2>Hospital Geo Map View</h2>
+</mat-toolbar>
+    <div>
     <agm-map [latitude]="coordinates.latitude" [longitude]="coordinates.longitude" [zoom]="14">
       <agm-marker [latitude]="coordinates.latitude" [longitude]="coordinates.longitude" 
       [iconUrl]="'https://tj-static.s3.ap-south-1.amazonaws.com/1.png'"
@@ -16,7 +19,7 @@
       <agm-info-window>
         <h3>
           <strong>Hospital Details</strong>
-          <p>Hospital is {{marker.distance}} from your current location.</p>
+          <p>Hospital is {{marker.distance | number : '1.2-2'}} KMs from your current location.</p>
         </h3>
       </agm-info-window>
     </agm-marker>

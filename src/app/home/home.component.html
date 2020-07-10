@@ -1,3 +1,6 @@
+<mat-toolbar>
+<h2>Services</h2>
+</mat-toolbar>
 <div class="container" fxLayout="row" fxLayout.sm="column" fxLayout.xs="column"
   fxLayoutAlign.gt-md="space-around center" fxLayoutGap="10px">
 
@@ -7,19 +10,21 @@
         <h3>Live Bed Tracking</h3>
       </mat-card-title>
     </mat-card-header>
+    
     <mat-card-content>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta deserunt rem mollitia. Laboriosam consequatur nihil officiis, ipsum autem aspernatur esse dolorem vitae aperiam numquam ad corporis commodi, temporibus sint at.
-      </p>
+      <img mat-card-lg-image src="../../assets/images/bed-tracking.svg">
+      <p>Get the <b> list of Covid-19 hospitals</b> along with their price, type, ratings, features and bed availability. Also, get a map view of the Hospital location with other contact details.</p>
     </mat-card-content>
   </mat-card>
   <mat-card *ngIf="dish" fxFlex>
     <mat-card-header>
       <mat-card-title>
-        <h3>Emergency Contact</h3>
+        <h3>Emergency Helpline</h3>
       </mat-card-title>
     </mat-card-header>
     <mat-card-content>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta deserunt rem mollitia. Laboriosam consequatur nihil officiis, ipsum autem aspernatur esse dolorem vitae aperiam numquam ad corporis commodi, temporibus sint at.
+      <img mat-card-lg-image src="../../assets/images/undraw_calling_kpbp.svg">
+      <p>Facing an emergency? Don't Panic! Find a  <b> list of all helplines</b> that can help you.  In case, you are unable to connect to the helpline, remember, it is a difficult time 'Be positive' and try again.
       </p>
     </mat-card-content>
   </mat-card>
@@ -30,7 +35,9 @@
       </mat-card-title>
     </mat-card-header>
     <mat-card-content>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta deserunt rem mollitia. Laboriosam consequatur nihil officiis, ipsum autem aspernatur esse dolorem vitae aperiam numquam ad corporis commodi, temporibus sint at.
+      <img mat-card-lg-image src="../../assets/images/undraw_Directions_re_kjxs.svg">
+      <p>Check <b>  map view of nearest Covid-19 hospital</b>. We will use your device location to show you all hospitals around you in 50 KM range. Also,
+        tell you the distance of hospital from your current location.
       </p>
     </mat-card-content>
   </mat-card>

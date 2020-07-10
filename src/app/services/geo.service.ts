@@ -21,8 +21,8 @@ export class GeoService {
     this.geoFire = new GeoFire(firebaseRef);
    }
 
-   setLocation(locData : Object) {
-    this.geoFire.set(locData)
+   setLocation(key: String, coords: Array<Number>) {
+    this.geoFire.set(key,coords)
     .then(_ => console.log('location uploaded'))
     .catch(err => console.log(err))
    }

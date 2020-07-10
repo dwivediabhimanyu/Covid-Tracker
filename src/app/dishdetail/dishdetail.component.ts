@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Dish } from '../shared/dish';
 import { DishService } from '../services/dish.service';
 import { switchMap } from 'rxjs/operators';
+import { HospitaldbService } from '../services/hospitaldb.service'
 
 import { Params, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
@@ -14,20 +15,32 @@ import { Location } from '@angular/common';
 
 export class DishdetailComponent implements OnInit {
 
-  dish: Dish;
+  dish: any;
+  hospitals: any
   dishIds: string[];
+  current: string;
   prev: string;
   next: string;
+  private sub: any;
 
   constructor(private dishservice: DishService,
     private route: ActivatedRoute,
-    private location: Location) { }
+    private location: Location,
+    public hospitalService: HospitaldbService) { }
 
 
   ngOnInit() {
-    this.dishservice.getDishIds().subscribe(dishIds => this.dishIds = dishIds);
-    this.route.params.pipe(switchMap((params: Params) => this.dishservice.getDish(params['id'])))
-      .subscribe(dish => { this.dish = dish; this.setPrevNext(dish.id); });
+    this.sub = this.route.params.subscribe(params => {
+      this.current = params['id'];
+   });
+   this.hospitalService.getHospitals().subscribe(
+    items => {
+      console.log("Firebase Data")
+      this.hospitals = items;
+      console.log(this.hospitals)
+    }
+  )
+   console.log(this.current)
   }
 
   setPrevNext(dishId: string) {

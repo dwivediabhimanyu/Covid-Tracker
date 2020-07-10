@@ -1,7 +1,7 @@
 $lt-gray: #ddd;
 $background-dark: #1fab89;
-$background-light: #62d2a2;
-$background-pale: #9df3c4;
+$background-light: #002984;
+$background-pale: #e3f2fd;
 
 @mixin zero-margin($pad-up-down, $pad-left-right) {
     margin: 0px auto;
@@ -9,8 +9,16 @@ $background-pale: #9df3c4;
 }
 
 .footer{
-    background-color: $background-pale;
+    background-color: $background-light;
+    color: white;
     @include zero-margin(20px, 0px);
+    padding: 20px;
+    text-align: center;
+    font-size: small;
+    letter-spacing: 1px;
+}
+a {
+    color: white;
 }
 
 .btn-facebook {color:#fff!important; background-color:#3b5998!important;}

@@ -1,66 +1,54 @@
+<mat-toolbar>
+  <button mat-button (click)="goBack()">BACK</button>
+</mat-toolbar>
+
 <div class="container" fxLayout="row" fxLayout.sm="column" fxLayout.xs="column"
   fxLayoutAlign.gt-md="space-around center" fxLayoutGap="10px" fxLayoutGap.xs="0" >
-
-  <div fxFlex="100">
-    <div fxFlex *ngIf="dish">
+<div *ngFor="let hospital of hospitals">
+  <div *ngIf="hospital.id == current">
+    <div fxFlex="100">
+      <div fxFlex *ngIf="hospital">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>
+              <h3 *ngIf="hospital">{{hospital.name | uppercase}}</h3>
+            </mat-card-title>
+          </mat-card-header>
+          <img mat-card-image src={{hospital.image}} alt={{hospital.name}}>
+          <mat-card-content>
+            <p>{{hospital.description}}
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+           
+            
+            <button mat-button>LIKE</button>
+            <button mat-button>SHARE</button>
+            <span class="flex-spacer"></span>
+          
+          </mat-card-actions>
+        </mat-card>
+      </div>
+    </div>
+  
+    <div fxFlex *ngIf="hospital">
       <mat-card>
-        <mat-card-header>
-          <mat-card-title>
-            <h3 *ngIf="dish">{{dish.name | uppercase}}</h3>
-          </mat-card-title>
-        </mat-card-header>
-        <img mat-card-image src={{dish.image}} alt={{dish.name}}>
-        <mat-card-content>
-          <p>{{dish.description}}
-          </p>
-        </mat-card-content>
-        <mat-card-actions>
-          <button mat-button [routerLink]="['/dishdetail', prev]"><span class="fa fa-chevron-left fa-lg"></span></button>
-          <button mat-button (click)="goBack()">BACK</button>
-          <button mat-button>LIKE</button>
-          <button mat-button>SHARE</button>
-          <span class="flex-spacer"></span>
-          <button mat-button [routerLink]="['/dishdetail', next]"><span class="fa fa-chevron-right fa-lg"></span></button>
-        </mat-card-actions>
+        <agm-map [latitude]="hospital.lat" [longitude]="hospital.lng" [zoom]="14">
+          <agm-marker [latitude]="hospital.lat" [longitude]="hospital.lng">
+            <agm-info-window>
+              <h3>
+                <strong>{{hospital.name | uppercase}}</strong>
+                <p>Hospital is here</p>
+              </h3>
+            </agm-info-window>
+          </agm-marker>
+        </agm-map>
       </mat-card>
     </div>
   </div>
+</div>
 
-  <div fxFlex="40" >
-    <div fxFlex *ngIf="dish">
-      <mat-card>
-        <mat-card-header>
-          <mat-card-title>
-            <h3>Comments</h3>
-          </mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
-          <mat-list fxFlex >
-            <mat-list-item *ngFor="let comment of dish.comments">
-              <p matLine>{{comment.comment}}</p>
-              <p matLine>{{comment.rating}} Stars</p>
-              <p matLine>--{{comment.author}} {{comment.date | date:'mediumDate'}}</p>
-            </mat-list-item>
-          </mat-list>
-          </mat-card-content>
-          </mat-card>
-    </div>
-  </div>
-  <div fxFlex *ngIf="dish">
-    <mat-card>
-      <agm-map [latitude]="dish.lat" [longitude]="dish.lng" [zoom]="14">
-        <agm-marker [latitude]="dish.lat" [longitude]="dish.lng">
-          <agm-info-window>
-            <h3>
-              <strong>{{dish.name | uppercase}}</strong>
-              <p>Hospital is here</p>
-            </h3>
-          </agm-info-window>
-        </agm-marker>
-      </agm-map>
-    </mat-card>
-  </div>
-  <div [hidden]="dish">
+  <div [hidden]="hospitals">
     <mat-spinner></mat-spinner><h4>Loading . . . Please Wait</h4>
   </div>
 </div>

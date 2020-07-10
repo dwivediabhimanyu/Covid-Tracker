@@ -1,34 +1,120 @@
-<div class="container"
-     fxLayout="column"
-     fxLayoutGap="10px">
+<div>
+  <mat-toolbar>
+    <span class="flex-spacer"></span>
+    <a mat-button (click)="viewHospitalButton()"> View Hospital</a>
+    <a mat-button (click)="addHospitalButton()" > Add Hospital</a>
+  </mat-toolbar>
 
-  <div fxFlex>
-    <div>
-      <h3>Dashboard</h3>
-      <hr>
+<div class="container">
+  <div *ngIf="addHospital">
+    <div class="container">
+      <div class="example-container">
+        <form (ngSubmit)="onSubmit()">
+          <strong> Basic Details</strong> 
+          <hr>
+          <p> 
+            <mat-form-field>
+              <input matInput placeholder="Hospital Name" [(ngModel)]="newItem.name" name="name">
+            </mat-form-field>
+
+            <mat-form-field >
+              <mat-label>Hospital Type</mat-label>
+              <mat-select [(ngModel)]="newItem.category" name="category">
+                <mat-option value="government">GOVT</mat-option>
+                <mat-option value="private">PRIVATE</mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="City" name="city">
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="State" name="state">
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="Image URL" name="image">
+            </mat-form-field>
+          </p>
+          <p>
+            <mat-form-field class="full-width">
+              <textarea matInput name="description" placeholder="Hospital Description" rows=3 cols=5></textarea>
+            </mat-form-field>
+          </p>
+          <strong> Additional Details</strong> 
+          <hr>
+          
+
+
+
+            <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom">
+              <agm-marker [latitude]="latitude" [longitude]="longitude" [markerDraggable]="true"
+                (dragEnd)="markerDragEnd($event)"></agm-marker>
+            </agm-map>
+          
+            <h5>Address: {{address}}</h5>
+            <div>Latitude: {{latitude}}</div>
+            <div>Longitude: {{longitude}}</div>
+          
+ 
+          <p>
+            <mat-form-field>
+              <input matInput placeholder="Price" [(ngModel)]="newItem.price" name="price">
+            </mat-form-field>
+          </p>
+          <p>
+            <mat-form-field>
+              <input matInput placeholder="Total Beds" [(ngModel)]="newItem.totalBeds" name="totalBeds">
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="Occupied Beds" [(ngModel)]="newItem.occupiedBeds" name="occupiedBeds">
+            </mat-form-field>
+          </p>
+          <p>
+
+          </p>
+        <button type="submit" mat-button class="background-primary text-floral-white">Submit</button>
+        </form> 
+      </div>
     </div>
   </div>
-
-  <div fxFlex *ngIf="items">
-    <mat-grid-list cols="3" rowHeight="300px" [gutterSize]="'10px'">
-      <mat-grid-tile *ngFor="let item of items" >       
-        <mat-card class="hospitalCard" [routerLink]="['/tracking', item.id]">
-          <mat-card-header>
-            <mat-card-title>{{item.name | uppercase}}</mat-card-title>
-            <mat-card-subtitle>{{item.category | uppercase}}</mat-card-subtitle>
-          </mat-card-header>
-          <img mat-card-image height="200px"  src={{item.image}} alt={{item.name}}>
-          <mat-card-content>
-            <p>
-              Vaccant Beds: {{item.vaccant}}
-            </p>
-          </mat-card-content>
-        </mat-card>
-      </mat-grid-tile>
-    </mat-grid-list>
-  </div>
-
-  <div [hidden]="items">
-    <mat-spinner></mat-spinner><h4>Loading . . . Please Wait</h4>
-  </div>
 </div>
+
+<div *ngIf="viewHospital" class="container">  
+    <mat-accordion style="width: 100%;">
+      <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false"
+        *ngFor="let item of items">
+        <mat-expansion-panel-header class="right-aligned-header">
+          <mat-panel-title>
+            <p>
+              <strong>{{item.name}}</strong>
+            </p>
+
+          </mat-panel-title>
+          <mat-panel-description>
+            <div *ngIf="!panelOpenState">
+              <p>
+                Total Bed: {{item.totalBeds}}, Vaccant: {{item.vaccant}}
+              </p>
+            </div>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <form (ngSubmit)="updateHospital(item)">
+        <mat-form-field>
+          <input matInput placeholder="Total Beds" [(ngModel)]="item.totalBeds" name="totalBeds">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Occupied Beds" [(ngModel)]="item.occupiedBeds" name="occupiedBeds">
+        </mat-form-field>
+        <button mat-stroked-button color="warn" type="submit" style="margin-left: 20px;">Update</button>
+      </form>
+      <br>
+      <form  (ngSubmit)="deleteHospital(item)">
+        <button mat-flat-button color="warn">Delete Hospital</button>
+      </form>
+    
+      </mat-expansion-panel>
+    </mat-accordion>
+</div>
+
+
+</div>
+

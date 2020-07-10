@@ -1,14 +1,18 @@
+<mat-toolbar>
+  <h2>Covid-19 Hospitals</h2>
+  <span class="flex-spacer"></span>
+  <mat-form-field>
+    <mat-select [(ngModel)]="selected">
+      <mat-option value="option0">Alphabetically</mat-option>
+      <mat-option value="option1">Nearest</mat-option>
+      <mat-option value="option2">Price(Ascending)</mat-option>
+      <mat-option value="option3">Rating</mat-option>
+    </mat-select>
+  </mat-form-field>
+  </mat-toolbar>
 <div class="container"
      fxLayout="column"
      fxLayoutGap="10px">
-
-  <div fxFlex>
-    <div>
-      <h3>Hospitals</h3>
-      <hr>
-    </div>
-  </div>
-
   <div fxFlex *ngIf="items">
     <mat-grid-list cols="3" rowHeight="300px" [gutterSize]="'10px'">
       <mat-grid-tile *ngFor="let item of items" >       
