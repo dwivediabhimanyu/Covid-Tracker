@@ -1,0 +1,109 @@
+{
+  "configVersion": 1,
+  "index": "./index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "urls": [
+        "./favicon.ico",
+        "./index.html",
+        "./main.34f125a284307b25a678.js",
+        "./polyfills.e87f169affd68c815096.js",
+        "./runtime.06daa30a2963fa413676.js",
+        "./styles.aaa62d0551e30f455408.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "urls": [
+        "./assets/icons/icon-128x128.png",
+        "./assets/icons/icon-144x144.png",
+        "./assets/icons/icon-152x152.png",
+        "./assets/icons/icon-192x192.png",
+        "./assets/icons/icon-384x384.png",
+        "./assets/icons/icon-512x512.png",
+        "./assets/icons/icon-72x72.png",
+        "./assets/icons/icon-96x96.png",
+        "./assets/images/Screenshot from 2020-07-06 15-54-21.png",
+        "./assets/images/Screenshot from 2020-07-06 15-54-56.png",
+        "./assets/images/Screenshot from 2020-07-06 15-55-25.png",
+        "./assets/images/Screenshot from 2020-07-06 15-58-19.png",
+        "./assets/images/abhimanyu.png",
+        "./assets/images/alberto.png",
+        "./assets/images/bed-tracking.svg",
+        "./assets/images/buffet.png",
+        "./assets/images/elaicheesecake.png",
+        "./assets/images/era.jpg",
+        "./assets/images/hind.jpg",
+        "./assets/images/hospital.jpg",
+        "./assets/images/logo.png",
+        "./assets/images/rml.png",
+        "./assets/images/undraw_Directions_re_kjxs.svg",
+        "./assets/images/undraw_calling_kpbp.svg",
+        "./assets/images/uthappizza.png",
+        "./assets/images/vadonut.png",
+        "./assets/images/zucchipakoda.png"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "./assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "./assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "./assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "./assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "./assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "./assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "./assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "./assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "./assets/images/Screenshot from 2020-07-06 15-54-21.png": "e7678e1bf1440c058444f2de370310143635625a",
+    "./assets/images/Screenshot from 2020-07-06 15-54-56.png": "5ec183932dc0cad4de8e81bfbc3ed890bb1293f0",
+    "./assets/images/Screenshot from 2020-07-06 15-55-25.png": "7527265e01829ee96af2d417236dfde3788fa9c6",
+    "./assets/images/Screenshot from 2020-07-06 15-58-19.png": "ebf54c51c9674bf13d9f3c9fd2c1a930335f830f",
+    "./assets/images/abhimanyu.png": "cbcf447c67a0c0c5d9c7dc45b4e3e9137cada209",
+    "./assets/images/alberto.png": "d1195bfdaf4c51a19fbadfc87d30d7865f2e9920",
+    "./assets/images/bed-tracking.svg": "cc4401bd8f82b89263b2ca49d2d0d56d415d5c0c",
+    "./assets/images/buffet.png": "326fc6e5db9c5d11eedd1751166855d9861694cf",
+    "./assets/images/elaicheesecake.png": "02f2664739563045be586764bdf9605116ebdfe2",
+    "./assets/images/era.jpg": "e87f1c3c877ba319e3238dd670bfb9f153796fe0",
+    "./assets/images/hind.jpg": "ae72dc0c534c6302ef7a8b077ffbf19bc63bac42",
+    "./assets/images/hospital.jpg": "44b5f9e306d745ed4b01d7de2e7f82fed9cd24de",
+    "./assets/images/logo.png": "5ffe2e8535f5985293ea7acb45dd10f46138afd8",
+    "./assets/images/rml.png": "680bad4843cf857cfe9de677750a8773a0b0f618",
+    "./assets/images/undraw_Directions_re_kjxs.svg": "e68f32c2a09a24786ea8bfe51ad0c979907e75f2",
+    "./assets/images/undraw_calling_kpbp.svg": "6223fcc2169d81ce48aa187d6d467992c51ce03f",
+    "./assets/images/uthappizza.png": "098720841c400ff4f2d2051a66ae150eb519dbc9",
+    "./assets/images/vadonut.png": "e174adcd0cccdce057275d058e39477924f5cc09",
+    "./assets/images/zucchipakoda.png": "bb0178892a7075a63b989e83aa74653f445298ba",
+    "./favicon.ico": "84161b857f5c547e3699ddfbffc6d8d737542e01",
+    "./index.html": "dbb089d2d086992a97791fd24f6e93e6c69b82ce",
+    "./main.34f125a284307b25a678.js": "d9682a88ce17761ae12fa07b07432d97822123c5",
+    "./polyfills.e87f169affd68c815096.js": "e986a8b31f4b9d0472e01ac3b1702e42c53dc377",
+    "./runtime.06daa30a2963fa413676.js": "b62956c2192bfe5516d6374e753773901ed50ec5",
+    "./styles.aaa62d0551e30f455408.css": "949f1ad18aeacaf9f74e85c0f02b12d21a9c9927"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ]
+}
