@@ -1,4 +1,7 @@
-# ConFusion
+# Covid Bed Tracker 
+
+
+Live project link - [https://covid-19-281005.web.app/](https://covid-19-281005.web.app/)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.1.
 
